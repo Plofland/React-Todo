@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
 const todoData = [
   {
@@ -47,12 +48,27 @@ class App extends React.Component {
     });
   };
 
+  handleAdd = (itemText) => {
+    const task = {
+      text: itemText,
+      id: this.state.todoData.length,
+      completed: false
+    };
+
+    const newList = [...this.state.todoData, task];
+
+    this.setState({
+      todoData: newList
+    });
+  };
+
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
       <div>
         <h2>Todo App!</h2>
+        <TodoForm />
         <TodoList
           todoData={this.state.todoData}
           handleToggle={this.handleToggle}

@@ -13,7 +13,7 @@ const StyledItem = styled.div`
 `;
 
 export default function Todo(props) {
-  const { item, handleToggle } = props;
+  // const { item, handleToggle } = props;
 
   const handleClick = () => {
     props.handleToggle(props.item.id);
