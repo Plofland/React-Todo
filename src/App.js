@@ -68,7 +68,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo App!</h2>
-        <TodoForm />
+        <TodoForm handleAdd={this.handleAdd} />
         <TodoList
           todoData={this.state.todoData}
           handleToggle={this.handleToggle}
