@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import './components/Todo.css';
 
 const todoData = [
   {
@@ -29,7 +30,7 @@ class App extends React.Component {
       todoData: this.state.todoData.map((item) => {
         if (item.id === itemId) {
           return {
-            ...todoData,
+            ...item,
             completed: !item.completed
           };
         }
@@ -39,7 +40,7 @@ class App extends React.Component {
   };
 
   handleComplete = () => {
-    const newList = this.todoData.filter((item) => {
+    const newList = this.state.todoData.filter((item) => {
       return !item.completed;
     });
 

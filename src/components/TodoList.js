@@ -14,7 +14,9 @@ export default function TodoList(props) {
     <div>
       <button onClick={handleClick}>Clear Completed</button>
       {props.todoData.map((item) => {
-        return <Todo key={item.id} item={item} handleToggle={handleToggle} />;
+        return (
+          <Todo key={item.id} item={item} handleToggle={props.handleToggle} />
+        );
       })}
       <p>Hello</p>
     </div>
